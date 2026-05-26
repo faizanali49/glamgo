@@ -159,19 +159,7 @@ lib/
 
 # 🎥 App Preview
 
-<p align="center">
-  <a href="https://github.com/user-attachments/assets/5871624b-a3e2-4802-b0dd-a9982b7f2bf8">
-    <img 
-      src="https://github.com/user-attachments/assets/305a09f1-8e5d-40f7-b863-9960fda65b9b" 
-      width="180"
-      alt="GlamGo App Preview"
-    />
-  </a>
-</p>
-
-<p align="center">
-  Click the preview above to watch the full demo video
-</p>
+https://github.com/user-attachments/assets/5871624b-a3e2-4802-b0dd-a9982b7f2bf8
 
 ---
 
@@ -269,7 +257,7 @@ flutter run
 
 # 👨‍💻 Author
 
-Developed with Flutter for premium mobile UI engineering practice and portfolio presentation.
+Developed with Flutter for premium mobile UI engineering practice and portfolio presentation by Faizan Ali.
 
 ---
 
