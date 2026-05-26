@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:glamgo/features/profile/presentation/screens/profile_screen.dart';
+import 'package:glamgo/features/salon/presentation/screens/booking_confirmed_screen.dart';
+import 'package:glamgo/features/salon/presentation/screens/booking_details_screen.dart';
+import 'package:glamgo/features/salon/presentation/screens/booking_summary_screen.dart';
+import 'package:glamgo/features/salon/presentation/screens/choose_stylist_screen.dart';
+import 'package:glamgo/features/salon/presentation/screens/explore_screen.dart';
+import 'package:glamgo/features/salon/presentation/screens/my_bookings_screen.dart';
+import 'package:glamgo/features/salon/presentation/screens/salon_detail_screen.dart';
+import 'package:glamgo/features/salon/presentation/screens/select_date_time_screen.dart';
+import 'package:glamgo/features/salon/presentation/screens/service_detail_screen.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hbazar/features/salon/presentation/screens/choose_stylist_screen.dart';
-import 'package:hbazar/features/salon/presentation/screens/explore_screen.dart';
-import 'package:hbazar/features/salon/presentation/screens/salon_detail_screen.dart';
-import 'package:hbazar/features/salon/presentation/screens/select_date_time_screen.dart';
-import 'package:hbazar/features/salon/presentation/screens/service_detail_screen.dart';
 
 import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/otp_screen.dart';
@@ -56,6 +61,10 @@ final goRouterExtractorProvider = Provider<GoRouter>((ref) {
         },
       ),
       GoRoute(
+        path: '/booking-summary',
+        builder: (context, state) => const BookingSummaryScreen(),
+      ),
+      GoRoute(
         path: '/service-detail/:serviceId',
         builder: (context, state) {
           final serviceId =
@@ -67,10 +76,18 @@ final goRouterExtractorProvider = Provider<GoRouter>((ref) {
         path: '/choose-stylist',
         builder: (context, state) => const ChooseStylistScreen(),
       ),
-GoRoute(
-  path: '/select-date-time',
-  builder: (context, state) => const SelectDateTimeScreen(),
-),
+      GoRoute(
+        path: '/select-date-time',
+        builder: (context, state) => const SelectDateTimeScreen(),
+      ),
+      GoRoute(
+        path: '/booking-success',
+        builder: (context, state) => const BookingConfirmedScreen(),
+      ),
+      GoRoute(
+        path: '/booking-details',
+        builder: (context, state) => const BookingDetailsScreen(),
+      ),
       // Main App Persistent Navigation Core Shell Structure
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
@@ -100,9 +117,7 @@ GoRoute(
               GoRoute(
                 name: RouteNames.bookings,
                 path: '/bookings',
-                builder: (context, state) => const Scaffold(
-                  body: Center(child: Text('Bookings Flow Placeholder')),
-                ),
+                builder: (context, state) => const MyBookingsScreen(),
               ),
             ],
           ),
@@ -111,9 +126,7 @@ GoRoute(
               GoRoute(
                 name: RouteNames.profile,
                 path: '/profile',
-                builder: (context, state) => const Scaffold(
-                  body: Center(child: Text('Profile Management Placeholder')),
-                ),
+                builder: (context, state) => const ProfileScreen(),
               ),
             ],
           ),

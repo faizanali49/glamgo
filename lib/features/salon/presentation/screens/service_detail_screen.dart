@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_sizes.dart';
+import 'package:glamgo/core/theme/app_text_styles.dart';
+import 'package:glamgo/features/salon/presentation/widgets/gender_selector_bar.dart';
+import 'package:glamgo/features/salon/presentation/widgets/service_expert_card.dart';
+import 'package:glamgo/features/salon/presentation/widgets/style_type_selector_row.dart';
+import 'package:glamgo/features/salon/presentation/widgets/trust_indicator_row.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
-import 'package:hbazar/core/theme/app_sizes.dart';
-import 'package:hbazar/core/theme/app_text_styles.dart';
-import 'package:hbazar/features/salon/presentation/widgets/gender_selector_bar.dart';
-import 'package:hbazar/features/salon/presentation/widgets/service_expert_card.dart';
-import 'package:hbazar/features/salon/presentation/widgets/style_type_selector_row.dart';
-import 'package:hbazar/features/salon/presentation/widgets/trust_indicator_row.dart';
 
 import '../providers/service_detail_providers.dart';
 

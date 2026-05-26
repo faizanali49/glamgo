@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
 
 class OtpPinInput extends StatelessWidget {
   final List<TextEditingController> controllers;

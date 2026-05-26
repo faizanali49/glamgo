@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+
 import '../providers/explore_providers.dart';
 
 class ExploreFilterBar extends ConsumerWidget {
@@ -26,7 +27,8 @@ class ExploreFilterBar extends ConsumerWidget {
             child: ChoiceChip(
               label: Text(option),
               selected: isSelected,
-              onSelected: (_) => ref.read(activeFilterTagProvider.notifier).state = option,
+              onSelected: (_) =>
+                  ref.read(activeFilterTagProvider.notifier).state = option,
               selectedColor: AppColors.primary,
               backgroundColor: const Color(0xFFF3F4F6),
               labelStyle: TextStyle(
@@ -35,7 +37,9 @@ class ExploreFilterBar extends ConsumerWidget {
                 fontSize: 13,
               ),
               side: BorderSide.none,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
               showCheckmark: false,
             ),
           );

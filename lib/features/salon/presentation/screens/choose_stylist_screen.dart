@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_sizes.dart';
+import 'package:glamgo/features/salon/presentation/widgets/next_available_card.dart';
+import 'package:glamgo/features/salon/presentation/widgets/stylist_filter_chips.dart';
+import 'package:glamgo/features/salon/presentation/widgets/stylist_profile_tile.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
-import 'package:hbazar/core/theme/app_sizes.dart';
-import 'package:hbazar/features/salon/presentation/widgets/next_available_card.dart';
-import 'package:hbazar/features/salon/presentation/widgets/stylist_filter_chips.dart';
-import 'package:hbazar/features/salon/presentation/widgets/stylist_profile_tile.dart';
 
 import '../providers/stylist_providers.dart';
 

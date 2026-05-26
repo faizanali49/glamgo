@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+
 import '../providers/home_providers.dart';
 
 class HomeServiceToggle extends ConsumerWidget {
@@ -25,7 +26,11 @@ class HomeServiceToggle extends ConsumerWidget {
               color: const Color(0xFFEEF2FF),
               borderRadius: BorderRadius.circular(12),
             ),
-            child: const Icon(Icons.business_center_outlined, color: AppColors.primary, size: 22),
+            child: const Icon(
+              Icons.business_center_outlined,
+              color: AppColors.primary,
+              size: 22,
+            ),
           ),
           const SizedBox(width: 12),
           const Expanded(
@@ -34,18 +39,29 @@ class HomeServiceToggle extends ConsumerWidget {
               children: [
                 Text(
                   'Need service at home?',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: AppColors.textPrimary),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    color: AppColors.textPrimary,
+                  ),
                 ),
                 SizedBox(height: 2),
-                Text('Get salon services at your home', style: TextStyle(color: AppColors.textSecondary, fontSize: 12)),
+                Text(
+                  'Get salon services at your home',
+                  style: TextStyle(
+                    color: AppColors.textSecondary,
+                    fontSize: 12,
+                  ),
+                ),
               ],
             ),
           ),
           Switch.adaptive(
             value: isToggled,
-            onChanged: (val) => ref.read(homeServiceToggleProvider.notifier).state = val,
+            onChanged: (val) =>
+                ref.read(homeServiceToggleProvider.notifier).state = val,
             activeColor: AppColors.primary,
-          )
+          ),
         ],
       ),
     );

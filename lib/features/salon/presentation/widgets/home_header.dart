@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
-import 'package:hbazar/core/theme/app_sizes.dart';
-import 'package:hbazar/core/theme/app_text_styles.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_sizes.dart';
+import 'package:glamgo/core/theme/app_text_styles.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key});
@@ -22,7 +22,11 @@ class HomeHeader extends StatelessWidget {
                   children: [
                     RichText(
                       text: const TextSpan(
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppColors.textPrimary),
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.textPrimary,
+                        ),
                         children: [
                           TextSpan(text: 'Hello, Welcome '),
                           TextSpan(text: '👋', style: TextStyle(fontSize: 18)),
@@ -30,7 +34,10 @@ class HomeHeader extends StatelessWidget {
                       ),
                     ),
                     AppSizes.w4,
-                    const Text('Find your perfect salon today', style: AppTextStyles.bodySmall),
+                    const Text(
+                      'Find your perfect salon today',
+                      style: AppTextStyles.bodySmall,
+                    ),
                   ],
                 ),
                 Container(
@@ -40,10 +47,13 @@ class HomeHeader extends StatelessWidget {
                     border: Border.all(color: AppColors.divider, width: 1),
                   ),
                   child: IconButton(
-                    icon: const Icon(Icons.notifications_none_outlined, color: AppColors.textPrimary),
+                    icon: const Icon(
+                      Icons.notifications_none_outlined,
+                      color: AppColors.textPrimary,
+                    ),
                     onPressed: () {},
                   ),
-                )
+                ),
               ],
             ),
             AppSizes.h24,
@@ -58,11 +68,14 @@ class HomeHeader extends StatelessWidget {
                 decoration: InputDecoration(
                   icon: Icon(Icons.search, color: AppColors.textTertiary),
                   hintText: 'Search salons, services (haircut, facial...)',
-                  hintStyle: TextStyle(color: AppColors.textTertiary, fontSize: 14),
+                  hintStyle: TextStyle(
+                    color: AppColors.textTertiary,
+                    fontSize: 14,
+                  ),
                   border: InputBorder.none,
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

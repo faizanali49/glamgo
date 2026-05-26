@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
-import 'package:hbazar/core/theme/app_sizes.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_sizes.dart';
+
 import '../providers/explore_providers.dart';
 import '../widgets/explore_filter_bar.dart';
 import '../widgets/explore_salon_tile.dart';
@@ -22,7 +23,11 @@ class ExploreScreen extends ConsumerWidget {
           children: [
             Text(
               'Salons Near You',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: AppColors.textPrimary),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: AppColors.textPrimary,
+              ),
             ),
             SizedBox(height: 2),
             Text(
@@ -47,12 +52,19 @@ class ExploreScreen extends ConsumerWidget {
             Expanded(
               child: salonsAsync.when(
                 data: (salons) => ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: AppSizes.screenPadding),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSizes.screenPadding,
+                  ),
                   itemCount: salons.length,
-                  itemBuilder: (context, index) => ExploreSalonTile(salon: salons[index]),
+                  itemBuilder: (context, index) =>
+                      ExploreSalonTile(salon: salons[index]),
                 ),
-                loading: () => const Center(child: CircularProgressIndicator(color: AppColors.primary)),
-                error: (err, _) => Center(child: Text('Error rendering data view streams: $err')),
+                loading: () => const Center(
+                  child: CircularProgressIndicator(color: AppColors.primary),
+                ),
+                error: (err, _) => Center(
+                  child: Text('Error rendering data view streams: $err'),
+                ),
               ),
             ),
           ],

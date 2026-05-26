@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+import 'package:glamgo/features/auth/presentation/providers/auth_controller_provider.dart';
+import 'package:glamgo/features/auth/presentation/widgets/otp_pin_input.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
-import 'package:hbazar/features/auth/presentation/providers/auth_controller_provider.dart';
-import 'package:hbazar/features/auth/presentation/widgets/otp_pin_input.dart';
 
 class OtpScreen extends ConsumerStatefulWidget {
   const OtpScreen({super.key});

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+
 import '../providers/service_detail_providers.dart';
 
 class StyleTypeSelectorRow extends ConsumerWidget {
@@ -22,7 +23,8 @@ class StyleTypeSelectorRow extends ConsumerWidget {
               child: Text(style),
             ),
             selected: isSelected,
-            onSelected: (_) => ref.read(selectedStyleTypeProvider.notifier).state = style,
+            onSelected: (_) =>
+                ref.read(selectedStyleTypeProvider.notifier).state = style,
             selectedColor: AppColors.primary,
             backgroundColor: Colors.white,
             labelStyle: TextStyle(
@@ -31,7 +33,9 @@ class StyleTypeSelectorRow extends ConsumerWidget {
             ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
-              side: BorderSide(color: isSelected ? Colors.transparent : AppColors.divider),
+              side: BorderSide(
+                color: isSelected ? Colors.transparent : AppColors.divider,
+              ),
             ),
             showCheckmark: false,
           ),

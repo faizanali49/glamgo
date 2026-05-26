@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+
 import '../providers/home_providers.dart';
 
 class CategorySelector extends ConsumerWidget {
@@ -26,7 +27,9 @@ class CategorySelector extends ConsumerWidget {
               child: ChoiceChip(
                 label: Text(category.name),
                 selected: isSelected,
-                onSelected: (_) => ref.read(selectedCategoryProvider.notifier).state = category.id,
+                onSelected: (_) =>
+                    ref.read(selectedCategoryProvider.notifier).state =
+                        category.id,
                 selectedColor: AppColors.primary,
                 backgroundColor: const Color(0xFFF3F4F6),
                 labelStyle: TextStyle(
@@ -34,7 +37,9 @@ class CategorySelector extends ConsumerWidget {
                   fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
                 ),
                 side: BorderSide.none,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 showCheckmark: false,
               ),
             );

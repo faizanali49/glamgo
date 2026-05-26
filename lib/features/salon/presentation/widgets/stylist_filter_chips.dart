@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+
 import '../providers/stylist_providers.dart';
 
 class StylistFilterChips extends ConsumerWidget {
@@ -22,7 +23,8 @@ class StylistFilterChips extends ConsumerWidget {
             child: ChoiceChip(
               label: Text(filter),
               selected: isSelected,
-              onSelected: (_) => ref.read(activeFilterProvider.notifier).state = filter,
+              onSelected: (_) =>
+                  ref.read(activeFilterProvider.notifier).state = filter,
               selectedColor: AppColors.primary,
               backgroundColor: const Color(0xFFF3F4F6),
               labelStyle: TextStyle(
@@ -33,7 +35,9 @@ class StylistFilterChips extends ConsumerWidget {
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
-                side: BorderSide(color: isSelected ? Colors.transparent : Colors.transparent),
+                side: BorderSide(
+                  color: isSelected ? Colors.transparent : Colors.transparent,
+                ),
               ),
               showCheckmark: false,
             ),

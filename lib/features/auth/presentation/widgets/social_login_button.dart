@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
 
 class SocialLoginButton extends StatelessWidget {
   final VoidCallback? onPressed;

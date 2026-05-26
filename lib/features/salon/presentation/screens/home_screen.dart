@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
-import 'package:hbazar/core/theme/app_sizes.dart';
-import 'package:hbazar/features/salon/presentation/providers/home_providers.dart';
-import 'package:hbazar/features/salon/presentation/widgets/category_selector.dart';
-import 'package:hbazar/features/salon/presentation/widgets/home_header.dart';
-import 'package:hbazar/features/salon/presentation/widgets/home_service_toggle.dart';
-import 'package:hbazar/features/salon/presentation/widgets/salon_card.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_sizes.dart';
+import 'package:glamgo/features/salon/presentation/providers/home_providers.dart';
+import 'package:glamgo/features/salon/presentation/widgets/category_selector.dart';
+import 'package:glamgo/features/salon/presentation/widgets/home_header.dart';
+import 'package:glamgo/features/salon/presentation/widgets/home_service_toggle.dart';
+import 'package:glamgo/features/salon/presentation/widgets/salon_card.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});

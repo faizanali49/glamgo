@@ -1,4 +1,4 @@
-import 'package:hbazar/features/salon/repositories/location_repository.dart';
+import 'package:glamgo/features/salon/repositories/location_repository.dart';
 
 import '../../domain/models/user_location_model.dart';
 

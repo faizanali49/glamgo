@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hbazar/features/salon/repositories/location_repository.dart';
+import 'package:glamgo/features/salon/repositories/location_repository.dart';
+
 import '../../data/repositories/mock_location_repository.dart';
 import '../../domain/models/user_location_model.dart';
 
@@ -7,9 +8,10 @@ final locationRepositoryProvider = Provider<LocationRepository>((ref) {
   return MockLocationRepository();
 });
 
-final locationControllerProvider = AsyncNotifierProvider<LocationController, UserLocationModel>(() {
-  return LocationController();
-});
+final locationControllerProvider =
+    AsyncNotifierProvider<LocationController, UserLocationModel>(() {
+      return LocationController();
+    });
 
 class LocationController extends AsyncNotifier<UserLocationModel> {
   @override

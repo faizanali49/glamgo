@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+
 import '../../domain/models/stylist_models.dart';
 import '../providers/stylist_providers.dart';
 
@@ -57,7 +58,7 @@ class StylistProfileTile extends ConsumerWidget {
                     border: Border.all(color: Colors.white, width: 2),
                   ),
                 ),
-              )
+              ),
             ],
           ),
           const SizedBox(width: 14),
@@ -69,32 +70,64 @@ class StylistProfileTile extends ConsumerWidget {
               children: [
                 Row(
                   children: [
-                    Text(stylist.name, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: AppColors.textPrimary)),
+                    Text(
+                      stylist.name,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
                     const SizedBox(width: 6),
                     const Icon(Icons.star, color: Colors.amber, size: 14),
                     const SizedBox(width: 2),
-                    Text('${stylist.rating}', style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppColors.textPrimary)),
+                    Text(
+                      '${stylist.rating}',
+                      style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.textPrimary,
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 3),
-                Text('${stylist.yearsExperience}+ years exp • ${stylist.specialization}', style: const TextStyle(color: AppColors.textSecondary, fontSize: 12.5)),
+                Text(
+                  '${stylist.yearsExperience}+ years exp • ${stylist.specialization}',
+                  style: const TextStyle(
+                    color: AppColors.textSecondary,
+                    fontSize: 12.5,
+                  ),
+                ),
                 const SizedBox(height: 8),
-                
+
                 // Embedded Metadata Category Accent Tags Row Map
                 Row(
-                  children: stylist.tags.map((tag) => Container(
-                    margin: const EdgeInsets.only(right: 6),
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFF3F4F6),
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    child: Text(
-                      tag,
-                      style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w700, color: AppColors.textSecondary, letterSpacing: 0.3),
-                    ),
-                  )).toList(),
-                )
+                  children: stylist.tags
+                      .map(
+                        (tag) => Container(
+                          margin: const EdgeInsets.only(right: 6),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 4,
+                          ),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFF3F4F6),
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Text(
+                            tag,
+                            style: const TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.textSecondary,
+                              letterSpacing: 0.3,
+                            ),
+                          ),
+                        ),
+                      )
+                      .toList(),
+                ),
               ],
             ),
           ),
@@ -104,8 +137,9 @@ class StylistProfileTile extends ConsumerWidget {
             value: stylist.id,
             groupValue: selectedStylistId,
             activeColor: AppColors.primary,
-            onChanged: (val) => ref.read(selectedStylistIdProvider.notifier).state = val,
-          )
+            onChanged: (val) =>
+                ref.read(selectedStylistIdProvider.notifier).state = val,
+          ),
         ],
       ),
     );

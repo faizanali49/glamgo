@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
-import 'package:hbazar/core/theme/app_sizes.dart';
-import 'package:hbazar/features/salon/presentation/widgets/horizontal_calendar_strip.dart';
-import 'package:hbazar/features/salon/presentation/widgets/time_slot_segment_grid.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_sizes.dart';
+import 'package:glamgo/features/salon/presentation/widgets/horizontal_calendar_strip.dart';
+import 'package:glamgo/features/salon/presentation/widgets/time_slot_segment_grid.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
 import '../providers/booking_slot_providers.dart';
@@ -245,7 +246,11 @@ class SelectDateTimeScreen extends ConsumerWidget {
                       ],
                     ),
                     ElevatedButton(
-                      onPressed: selectedSlot != null ? () {} : null,
+                      onPressed: selectedSlot != null
+                          ? () {
+                              GoRouter.of(context).push('/booking-summary');
+                            }
+                          : null,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.primary,
                         foregroundColor: Colors.white,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+
 import '../../domain/models/service_detail_models.dart';
 import '../providers/service_detail_providers.dart';
 
@@ -16,7 +17,9 @@ class ServiceExpertCard extends ConsumerWidget {
 
     return GestureDetector(
       onTap: () {
-        ref.read(selectedPreferredStaffIdProvider.notifier).state = isSelected ? null : expert.id;
+        ref.read(selectedPreferredStaffIdProvider.notifier).state = isSelected
+            ? null
+            : expert.id;
       },
       child: Container(
         margin: const EdgeInsets.only(right: 14),
@@ -29,7 +32,9 @@ class ServiceExpertCard extends ConsumerWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: isSelected ? AppColors.primary : Colors.transparent,
+                      color: isSelected
+                          ? AppColors.primary
+                          : Colors.transparent,
                       width: 2.5,
                     ),
                   ),
@@ -48,13 +53,17 @@ class ServiceExpertCard extends ConsumerWidget {
                       backgroundColor: AppColors.primary,
                       child: Icon(Icons.check, size: 12, color: Colors.white),
                     ),
-                  )
+                  ),
               ],
             ),
             const SizedBox(height: 6),
             Text(
               expert.name,
-              style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppColors.textPrimary),
+              style: const TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+                color: AppColors.textPrimary,
+              ),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
@@ -63,9 +72,16 @@ class ServiceExpertCard extends ConsumerWidget {
               children: [
                 const Icon(Icons.star, color: Colors.amber, size: 12),
                 const SizedBox(width: 2),
-                Text('${expert.rating}', style: const TextStyle(color: AppColors.textSecondary, fontSize: 11, fontWeight: FontWeight.bold)),
+                Text(
+                  '${expert.rating}',
+                  style: const TextStyle(
+                    color: AppColors.textSecondary,
+                    fontSize: 11,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),

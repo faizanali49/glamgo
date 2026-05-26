@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+
 import '../../domain/models/salon_detail_models.dart';
 
 class ExpertCircleAvatar extends StatelessWidget {
@@ -19,15 +20,28 @@ class ExpertCircleAvatar extends StatelessWidget {
             backgroundColor: const Color(0xFFE5E7EB),
           ),
           const SizedBox(height: 6),
-          Text(expert.name, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppColors.textPrimary)),
+          Text(
+            expert.name,
+            style: const TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+              color: AppColors.textPrimary,
+            ),
+          ),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               const Icon(Icons.star, color: Colors.amber, size: 12),
               const SizedBox(width: 2),
-              Text('${expert.rating}', style: const TextStyle(color: AppColors.textSecondary, fontSize: 11)),
+              Text(
+                '${expert.rating}',
+                style: const TextStyle(
+                  color: AppColors.textSecondary,
+                  fontSize: 11,
+                ),
+              ),
             ],
-          )
+          ),
         ],
       ),
     );

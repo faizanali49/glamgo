@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+
 import '../providers/service_detail_providers.dart';
 
 class GenderSelectorBar extends ConsumerWidget {
@@ -22,13 +23,20 @@ class GenderSelectorBar extends ConsumerWidget {
           final isSelected = activeGender == gender;
           return Expanded(
             child: GestureDetector(
-              onTap: () => ref.read(selectedGenderProvider.notifier).state = gender,
+              onTap: () =>
+                  ref.read(selectedGenderProvider.notifier).state = gender,
               child: Container(
                 decoration: BoxDecoration(
                   color: isSelected ? Colors.white : Colors.transparent,
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: isSelected
-                      ? [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 4, offset: const Offset(0, 2))]
+                      ? [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.05),
+                            blurRadius: 4,
+                            offset: const Offset(0, 2),
+                          ),
+                        ]
                       : null,
                 ),
                 padding: const EdgeInsets.symmetric(vertical: 12),
@@ -36,7 +44,9 @@ class GenderSelectorBar extends ConsumerWidget {
                 child: Text(
                   gender,
                   style: TextStyle(
-                    color: isSelected ? AppColors.primary : AppColors.textSecondary,
+                    color: isSelected
+                        ? AppColors.primary
+                        : AppColors.textSecondary,
                     fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
                     fontSize: 14,
                   ),

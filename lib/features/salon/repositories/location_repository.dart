@@ -1,4 +1,4 @@
-import 'package:hbazar/features/salon/domain/models/user_location_model.dart';
+import 'package:glamgo/features/salon/domain/models/user_location_model.dart';
 
 abstract class LocationRepository {
   Future<UserLocationModel> requestDeviceLocation();

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+
 import '../providers/stylist_providers.dart';
 
 class NextAvailableCard extends ConsumerWidget {
@@ -36,9 +37,22 @@ class NextAvailableCard extends ConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Next Available Expert', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: AppColors.textPrimary)),
+                  Text(
+                    'Next Available Expert',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
                   SizedBox(height: 2),
-                  Text('Fastest booking without waiting', style: TextStyle(color: AppColors.textSecondary, fontSize: 13)),
+                  Text(
+                    'Fastest booking without waiting',
+                    style: TextStyle(
+                      color: AppColors.textSecondary,
+                      fontSize: 13,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -46,8 +60,9 @@ class NextAvailableCard extends ConsumerWidget {
               value: true,
               groupValue: isSelected,
               activeColor: AppColors.primary,
-              onChanged: (_) => ref.read(selectedStylistIdProvider.notifier).state = null,
-            )
+              onChanged: (_) =>
+                  ref.read(selectedStylistIdProvider.notifier).state = null,
+            ),
           ],
         ),
       ),

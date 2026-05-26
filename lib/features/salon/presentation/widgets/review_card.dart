@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hbazar/core/theme/app_colors.dart';
+import 'package:glamgo/core/theme/app_colors.dart';
+
 import '../../domain/models/salon_detail_models.dart';
 
 class ReviewCard extends StatelessWidget {
@@ -22,14 +23,32 @@ class ReviewCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(review.reviewerName, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: AppColors.textPrimary)),
-              Text(review.relativeTime, style: const TextStyle(color: AppColors.textTertiary, fontSize: 11)),
+              Text(
+                review.reviewerName,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 13,
+                  color: AppColors.textPrimary,
+                ),
+              ),
+              Text(
+                review.relativeTime,
+                style: const TextStyle(
+                  color: AppColors.textTertiary,
+                  fontSize: 11,
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 8),
           Text(
             '"${review.comment}"',
-            style: const TextStyle(color: AppColors.textSecondary, fontSize: 13, fontStyle: FontStyle.italic, height: 1.4),
+            style: const TextStyle(
+              color: AppColors.textSecondary,
+              fontSize: 13,
+              fontStyle: FontStyle.italic,
+              height: 1.4,
+            ),
           ),
         ],
       ),
